@@ -1,0 +1,14 @@
+import "@tamagui/core/reset.css";
+
+import { TamaguiProvider, createTamagui } from "tamagui";
+
+import { config } from "@tamagui/config/v3";
+
+const tamaguiConfig = createTamagui(config);
+
+type Conf = typeof tamaguiConfig;
+declare module "tamagui" {
+  interface TamaguiCustomConfig extends Conf {}
+}
+
+export default tamaguiConfig;
